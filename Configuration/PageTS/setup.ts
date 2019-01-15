@@ -1,0 +1,17 @@
+mod.wizards.newContentElement.wizardItems.common {
+   elements {
+      vimeovideo_pi1 {
+         iconIdentifier = vimeovideo_icon
+         title = Vimeo Video
+         description = Vimeo video content element
+         tt_content_defValues {
+            CType = vimeovideo_pi1
+         }
+      }
+   }
+   show := addToList(vimeovideo_pi1)
+}
+TCEFORM.tt_content.tx_vimeovideo_ratio.addItems {
+	0 = Widescreen (16:9)
+	1 = Standard (4:3)
+}

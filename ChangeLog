@@ -1,0 +1,37 @@
+2014-08-30  Tanel Põld  <tanel@brightside.ee>
+
+	* 0.1.0
+		– Initial release
+
+2014-09-02
+	* 0.1.1
+		– added Resources/Public/JavaScript/jquery.fitVids.js
+		
+2014-09-02
+	* 0.2.0
+		– fitV5ids.js removed completely as it was not working with all modern browsers. Pure CSS solution is used. Changes in setup.txt and Index.html template.
+2015-05-15
+	* 0.3.0
+		– TYPO3 7.2 compatibility
+		– HTTPS set as default in embed video template
+2015-05-21
+	* 0.3.1
+		– Sys categories and gridelements compatibility.
+2015-05-28
+	* 0.3.2
+		– Improved Vimeo links parsing
+2015-05-28
+	* 0.3.3
+		– A test bug fixed
+2015-05-28
+	* 0.3.4
+		– HTML Template bug fix correcting aspect ratio array names
+2015-11-19
+	* 0.4.0
+		– Backend preview for videos
+		– TYPO3 7.6 LTS compatible
+		– Moved under "Typical Page Content" in New content element wizard
+2017-04-11
+	* 0.5.0
+		– Dropping support for TYPO3 7.6 LTS
+		– TYPO3 8.7 LTS compatible

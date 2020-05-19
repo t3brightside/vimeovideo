@@ -1,3 +1,6 @@
+tt_content.vimeovideo_pi1 < tt_content.list.20.vimeovideo_contentrenderer
+tt_content.vimeovideo_pi1.action = index
+
 plugin.tx_vimeovideo {
 	view < lib.contentElement
     view.templateRootPaths.10 = EXT:vimeovideo/Resources/Private/Templates/

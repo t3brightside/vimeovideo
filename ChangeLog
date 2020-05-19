@@ -39,3 +39,6 @@
 	* 0.6.0
 		– Dropping support for TYPO3 8.5 LTS
 		– TYPO3 9.5 LTS compatible
+2020-05-19
+	* 0.7.0
+		– TYPO3 10.4 LTS compatible

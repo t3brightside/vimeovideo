@@ -70,17 +70,20 @@ $tempColumns = array(
             ),
 		),
 	),
-	'tx_vimeovideo_ratio' => array(
-        'exclude' => 1,
-        'label'   => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_ratio.title',
-        'config'  => array(
-			'type'     => 'select',
-			'renderType' => 'selectSingle',
-            'items'    => array(), /* items set in page TsConfig */
-            'size'     => 1,
-            'maxitems' => 1
-        )
-    ),
+		'tx_vimeovideo_ratio' => array(
+	        'exclude' => 1,
+					'label'   => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_ratio.title',
+	        'config'  => array(
+	            'type'     => 'select',
+	            'renderType' => 'selectSingle',
+	            'items'    => array(), /* items set in page TsConfig */
+	            'size'     => 1,
+	            'maxitems' => 1,
+              'behaviour' => [
+                'allowLanguageSynchronization' => true,
+              ]
+	        )
+	    ),
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);

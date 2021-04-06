@@ -45,5 +45,4 @@
 2021-04-05
 	* 0.7.1
 		– TYPO3 11 compatible
-		– Relocate ext icons
 		– Change language xml to xlf

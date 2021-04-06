@@ -22,5 +22,10 @@
     "psr-4": {
       "Brightside\\Vimeovideo\\": "Classes"
     }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "vimeovideo"
+    }
   }
 }

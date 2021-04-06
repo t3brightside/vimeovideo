@@ -13,11 +13,12 @@
 
 ## Features
 
-- Parses all kinds of dirty Vimeo links
+- Parses differet Vimeo links
 - Video aspect ratio (16:9, 4:3, configurable)
 - Autoplay (on/off)
 - Show inline title (on/off)
 - Loop (on/off)
+- Back end preview
 
 ## Installation
 

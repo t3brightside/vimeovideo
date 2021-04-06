@@ -42,3 +42,8 @@
 2020-05-19
 	* 0.7.0
 		– TYPO3 10.4 LTS compatible
+2021-04-05
+	* 0.7.1
+		– TYPO3 11 compatible
+		– Relocate ext icons
+		– Change language xml to xlf

@@ -18,7 +18,7 @@ defined('TYPO3_MODE') || die('Access denied.');
 $tempColumns = array(
 	'tx_vimeovideo_url' => array(
 		'exclude' => 0,
-		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xml:tx_vimeovideo_url.title',
+		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_url.title',
 		'config' => array(
 			'type' => 'input',
 			'size' => '50',
@@ -28,7 +28,7 @@ $tempColumns = array(
 	),
 	'tx_vimeovideo_caption' => array(
 		'exclude' => 1,
-		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xml:tx_vimeovideo_caption.title',
+		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_caption.title',
 		'config' => array(
 			'type' => 'input',
 			'size' => '50',
@@ -36,7 +36,7 @@ $tempColumns = array(
 	),
 	'tx_vimeovideo_autoplay' => array (
 		'exclude' => 1,
-		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xml:tx_vimeovideo_autoplay.title',
+		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_autoplay.title',
 		'config' => array (
 			'type' => 'check',
 			'items' => array(
@@ -48,7 +48,7 @@ $tempColumns = array(
 	),
 	'tx_vimeovideo_loop' => array (
 		'exclude' => 1,
-		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xml:tx_vimeovideo_loop.title',
+		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_loop.title',
 		'config' => array (
 			'type' => 'check',
 			'items' => array(
@@ -60,7 +60,7 @@ $tempColumns = array(
 	),
 	'tx_vimeovideo_title' => array (
 		'exclude' => 1,
-		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xml:tx_vimeovideo_title.title',
+		'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_title.title',
 		'config' => array (
 			'type' => 'check',
 			'items' => array(
@@ -72,7 +72,7 @@ $tempColumns = array(
 	),
 	'tx_vimeovideo_ratio' => array(
         'exclude' => 1,
-        'label'   => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xml:tx_vimeovideo_ratio.title',
+        'label'   => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_ratio.title',
         'config'  => array(
 			'type'     => 'select',
 			'renderType' => 'selectSingle',
@@ -84,7 +84,7 @@ $tempColumns = array(
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tt_content', 'EXT:vimeovideo/Resources/Private/Language/locallang_db.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tt_content', 'EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf');
 
 
 $GLOBALS['TCA']['tt_content']['types']['vimeovideo_pi1']['showitem'] = '
@@ -92,8 +92,8 @@ $GLOBALS['TCA']['tt_content']['types']['vimeovideo_pi1']['showitem'] = '
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
-            --palette--;LLL:EXT:youtubevideo/Resources/Private/Language/locallang_db.xml:tx_vimevideo.title;vimeovideoMain,
-			--palette--;LLL:EXT:youtubevideo/Resources/Private/Language/locallang_db.xml:tx_vimeovideo.settings;vimeovideoSettings,
+            --palette--;LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimevideo.title;vimeovideoMain,
+			--palette--;LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo.settings;vimeovideoSettings,
 
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,

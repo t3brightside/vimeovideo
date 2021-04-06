@@ -27,7 +27,7 @@ $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\
 $iconRegistry->registerIcon(
   'vimeovideo_icon',
   \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-  ['source' => 'EXT:vimeovideo/Resources/Public/Images/Icons/ext_icon_content.svg']
+  ['source' => 'EXT:vimeovideo/Resources/Public/Icons/ext_icon_content.svg']
 );
 
 

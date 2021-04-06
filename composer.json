@@ -2,7 +2,7 @@
   "name": "t3brightside/vimeovideo",
   "description": "TYPO3 CMS extension for easy to use Vimeo video content elements.",
   "type": "typo3-cms-extension",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "keywords": ["TYPO3", "Vimeo", "video", "responsive"],
   "homepage": "https://github.com/t3brightside/vimeovideo/",
   "license": "GPL-2.0+",
@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-      "typo3/cms-core": "^9.5 || ^10.4",
+      "typo3/cms-core": "^10.4 || ^11",
       "typo3/cms-fluid-styled-content": "*"
   },
   "autoload": {

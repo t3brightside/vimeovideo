@@ -8,30 +8,30 @@
 						overflow: hidden;
 						position: relative;
 						padding-bottom:
-							<f:if condition="{ratio} == 0">
-								<f:CObject typoscriptObjectPath="plugin.tx_vimeovideo.render.ratioDefault" />%
+							<f:if condition="{data.tx_vimeovideo_ratio} == 0">
+								{ratioDefault}%
 							</f:if>
-							<f:if condition="{ratio} == 1">
-								<f:CObject typoscriptObjectPath="plugin.tx_vimeovideo.render.ratio1" />%
+							<f:if condition="{data.tx_vimeovideo_ratio} == 1">
+								{ratio1}%
 							</f:if>
 						;
-					"> 		
+					">
 					<iframe
 						id="vimeoVideo_{uid}"
 						src="https://player.vimeo.com/video/{code}?byline=0
 						&amp;portrait=0
 						&amp;badge=0
-						&amp;color={f:cObject(typoscriptObjectPath:'plugin.tx_vimeovideo.render.color')}
-						&amp;autoplay={autoplay}
-						&amp;loop={loop}
-						&amp;title={title}"
+						&amp;color={color}
+						&amp;autoplay={data.tx_vimeovideo_autoplay}
+						&amp;loop={data.tx_vimeovideo_loop}
+						&amp;title={data.tx_vimeovideo_caption}"
 						style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"
 						webkitallowfullscreen mozallowfullscreen allowfullscreen>
 					</iframe>
 				</div>
-				<f:if condition="{caption}">
+				<f:if condition="{data.tx_vimeovideo_caption}">
 					<figcaption>
-						<p class="figureCaption">{caption}</p>
+						<p class="figureCaption">{data.tx_vimeovideo_caption}</p>
 					</figcaption>
 				</f:if>
 			</figure>

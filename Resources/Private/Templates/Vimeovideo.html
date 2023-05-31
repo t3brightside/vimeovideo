@@ -1,40 +1,40 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace ea=Brightside\Embedassets\ViewHelpers}
+
 	<f:layout name="Default" />
 	<f:section name="Main">
-		<div class="vimeoVideo">
-			<figure>
-				<div class="videoWrapper" style="
-						height: 0;
-						overflow: hidden;
-						position: relative;
-						padding-bottom:
-							<f:if condition="{data.tx_vimeovideo_ratio} == 0">
-								{ratioDefault}%
-							</f:if>
-							<f:if condition="{data.tx_vimeovideo_ratio} == 1">
-								{ratio1}%
-							</f:if>
-						;
-					">
-					<iframe
-						id="vimeoVideo_{uid}"
-						src="https://player.vimeo.com/video/{code}?byline=0
-						&amp;portrait=0
-						&amp;badge=0
-						&amp;color={color}
-						&amp;autoplay={data.tx_vimeovideo_autoplay}
-						&amp;loop={data.tx_vimeovideo_loop}
-						&amp;title={data.tx_vimeovideo_caption}"
-						style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"
-						webkitallowfullscreen mozallowfullscreen allowfullscreen>
-					</iframe>
-				</div>
-				<f:if condition="{data.tx_vimeovideo_caption}">
-					<figcaption>
-						<p class="figureCaption">{data.tx_vimeovideo_caption}</p>
-					</figcaption>
-				</f:if>
-			</figure>
-		</div>
+        <ea:asset.css embed="1" priority="{settings.cssPriority}" identifier="vimeoDefault" href="{settings.cssFile}" />
+        <f:if condition="{data.tx_vimeovideo_colcount}">
+            <f:then>
+                <f:if condition="{vimeovideos -> f:count()} < {data.tx_vimeovideo_colcount}">
+                    <f:then><f:variable name="colCount">{vimeovideos -> f:count()}</f:variable></f:then>
+                    <f:else><f:variable name="colCount">{data.tx_vimeovideo_colcount}</f:variable></f:else>
+                </f:if>
+
+                <f:variable name="spaceWidthTotal">{colCount - 1 * settings.colspacewidth}</f:variable>
+                <f:variable name="itemWidth">{100 - spaceWidthTotal / colCount}</f:variable>
+                <f:variable name="spaceInPx">{colCount - 1 * settings.colspacewidth / 100 * settings.coverimagewidth}</f:variable>
+                <f:variable name="coverImageWidth">{settings.coverimagewidth - spaceInPx / colCount}</f:variable>
+                <f:variable name="coverImageWidth_x2">{coverImageWidth * 2}</f:variable>
+            </f:then>
+            <f:else>
+                <f:variable name="coverImageWidth_x2">{settings.coverimagewidth * 2}</f:variable>
+            </f:else>
+        </f:if>
+
+		<f:if condition="{vimeovideos -> f:count()} > 1">
+			<div id="vimeovideogallery-{data.uid}" class="vimeovideogallery colcount-{colCount}">
+		</f:if>
+            <f:for each="{vimeovideos}" as="item" iteration="iterator">
+                <f:render partial="Item" arguments="{_all}" />
+                <f:if condition="{iterator.isLast} != 1"><div class="space" style="width: {settings.colspacewidth}%; padding-bottom: {settings.colspacewidth}%;"></div></f:if>
+            </f:for>
+		<f:if condition="{vimeovideos -> f:count()} > 1">
+			</div>
+		</f:if>
+		<f:if condition="{pagination.numberOfPages} > 1">
+			<f:render partial="Pagination" arguments="{pagination:pagination}" />
+		</f:if>
+        <ea:asset.script embed="1" identifier="vimeovideo" src="EXT:vimeovideo/Resources/Public/JavaScript/vimeovideo.js" />
 	</f:section>
 </html>

@@ -1,0 +1,253 @@
+.vimeovideo {
+    position: relative;
+}
+
+.vimeovideo>.videoWrapper {
+    overflow: hidden;
+    position: relative;
+    height: 0;
+}
+
+.vimeovideo>.videoWrapper>.coverimage {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1
+}
+
+.vimeovideo>.videoWrapper>.coverimage.play {
+    display: none
+}
+
+.vimeovideo>.videoWrapper>div>iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0
+}
+
+.vimeovideo-gdpr-overlay {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.93);
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.3em;
+    text-align: center;
+    font-weight: bold;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.vimeovideo-gdpr-text {
+    font-size: .9em;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 1em;
+    max-width: 500px;
+}
+
+.vimeovideo .vimeovideo-gdpr-note {
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.vimeovideo .vimeovideo-gdpr-button, .vimeovideo .vimeovideo-gdpr-cancel {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+.vimeovideo .vimeovideo-gdpr-button {
+    text-transform: uppercase;
+    border: 1px solid black;
+    line-height: 1em;
+    padding: 0.5em 1em;
+    display: inline-block;
+    font-size: 0.85em;
+    margin-right: 0.3em;
+    margin-bottom: 0.3em;
+    color: #000;
+    transition: all .3s;
+    background: #fff;
+}
+
+.vimeovideo .vimeovideo-gdpr-button:hover {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+}
+
+.vimeovideo .vimeovideo-gdpr-cancel {
+    padding: 0.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+    font-weight: normal;
+    color: #000;
+    display: block;
+}
+
+.vimeovideo .vimeovideo-gdpr-cancel:hover {
+    text-decoration: none;
+}
+
+.vimeovideo .small .vimeovideo-gdpr-overlay {
+    font-size: 0.8em;
+}
+
+.vimeovideo .tiny .vimeovideo-gdpr-overlay {
+    font-size: 0.65em;
+}
+
+.vimeovideo>.videoWrapper>.coverimage>.covertext {
+    position: absolute;
+    text-align: left;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.8rem 1.2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    bottom: 1.5rem;
+}
+
+.vimeovideo.small>.videoWrapper>.coverimage>.covertext {
+    margin-left: 0;
+    margin-right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5rem 0.9rem;
+}
+
+.vimeovideo.tiny>.videoWrapper>.coverimage>.covertext {
+    padding: 0.3rem 0.5rem;
+}
+
+.vimeovideo>.videoWrapper>.coverimage>.covertext h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.vimeovideo>.videoWrapper>.coverimage>.covertext h2,
+.vimeovideo>.videoWrapper>.coverimage>.covertext p {
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.vimeovideo.small>.videoWrapper>.coverimage>.covertext h2 {
+    font-size: 1em;
+}
+
+.vimeovideo.tiny>.videoWrapper>.coverimage>.covertext h2 {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.vimeovideo.small>.videoWrapper>.coverimage>.covertext p {
+    display: none;
+}
+
+.vimeovideo>.videoWrapper>.coverimage-click {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.vimeovideo>.videoWrapper>.coverimage-click:hover {
+    cursor: pointer;
+}
+
+.vimeovideo>.videoWrapper>.coverimage-click.play {
+    display: none;
+}
+
+.vimeovideo>.videoWrapper>.coverimage-click.play+.coverimage {
+    display: none;
+}
+
+/* play button colors */
+.vimeovideo .playbutton {
+    position: absolute;
+    width: 15%;
+    height: auto;
+    min-width: 40px;
+    max-width: 80px;
+    top: 50%;
+    right: 50%;
+    transform: translateY(-50%) translateX(50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.vimeovideo:hover .playbutton .ytp-large-play-button-bg {
+    fill: #19b7ea;
+    transition: all .3s;
+}
+
+/* if .vimeovideo width is under set px, breakpoint is set */
+.vimeovideogallery>.item, .vimeovideogallery>.space {
+    float: left;
+}
+
+/* column layouts */
+.vimeovideogallery.colcount-0 .space,
+.vimeovideogallery.colcount-3 .space:nth-child(3n),
+.vimeovideogallery.colcount-2 .space:nth-child(4n),
+.vimeovideogallery.colcount-4 .space:nth-child(8n),
+.vimeovideogallery.colcount-5 .space:nth-child(10n),
+.vimeovideogallery.colcount-6 .space:nth-child(12n),
+.vimeovideogallery.colcount-7 .space:nth-child(14n),
+.vimeovideogallery.colcount-8 .space:nth-child(16n) {
+    float: none;
+    clear: both;
+}
+
+@media (prefers-color-scheme: dark) {
+    .vimeovideo-gdpr-overlay {
+        background: rgba(0, 0, 0, 0.93);
+        color: #fff;
+    }
+
+    .vimeovideo-gdpr-button {
+        color: #fff;
+        background: #000;
+        border-color: #fff;
+    }
+
+    .vimeovideo-gdpr-button:hover {
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+    }
+
+    .vimeovideo .vimeovideo-gdpr-cancel {
+        color: #fff;
+    }
+}

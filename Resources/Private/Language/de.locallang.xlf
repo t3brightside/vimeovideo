@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:youtubevideo/Resources/Private/Language/locallang.xlf" date="2021-11-04T17:54:12Z" product-name="youtubevideo">
+		<header/>
+		<body>
+			<trans-unit id="gdpr-text">
+				<target>Wenn Sie das Video abspielen, sendet Vimeo Ihnen einige Cookies!</target>
+			</trans-unit>
+			<trans-unit id="gdpr-consent">
+				<target>Accept &amp; Play</target>
+			</trans-unit>
+			<trans-unit id="gdpr-consentall">
+				<target>Accept for All Videos &amp; Play</target>
+			</trans-unit>
+			<trans-unit id="gdpr-cancel">
+				<target>Cancel</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

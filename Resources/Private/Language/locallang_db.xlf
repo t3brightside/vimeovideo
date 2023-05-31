@@ -5,16 +5,19 @@
 		<header/>
 		<body>
 			<trans-unit id="tt_content.tx_content_slug_fragment">
-				<source>Vimeo Video</source>
+				<source>Human-readable URL #anchor</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo.title">
+			  <source>YouTube Video</source>
 			</trans-unit>
 			<trans-unit id="tx_vimeovideo.settings">
-			  <source>Video Settings</source>
+			  <source>Settings</source>
 			</trans-unit>
-			<trans-unit id="tx_vimeovideo_url.title">
-			  <source>Vimeo URL</source>
+			<trans-unit id="tx_vimeovideo.layout">
+			  <source>Layout</source>
 			</trans-unit>
-			<trans-unit id="tx_vimeovideo_url.description">
-			  <source>Paste the Vimeo video URL as it is.</source>
+			<trans-unit id="tx_vimeovideo.cover">
+			  <source>Video Cover</source>
 			</trans-unit>
 			<trans-unit id="tx_vimeovideo_caption.title">
 			  <source>Description (Caption)</source>
@@ -34,17 +37,68 @@
 			<trans-unit id="tx_vimeovideo_autoplay.description">
 			  <source>Starts video playback automatically on page load.</source>
 			</trans-unit>
-			<trans-unit id="tx_vimeovideo_title.title">
-			  <source>Show Inline Title</source>
+			<trans-unit id="tx_vimeovideo_showinfo.title">
+			  <source>Video Info</source>
 			</trans-unit>
-			<trans-unit id="tx_vimeovideo_title.description">
-			  <source>Shows information (title, etc.) from Vimeo.</source>
+			<trans-unit id="tx_vimeovideo_showinfo.description">
+			  <source>Shows information (title, etc.) from YouTube.</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_rel.title">
+			  <source>Related Videos</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_rel.description">
+			  <source>Shows related videos from YouTube at the end of the video.</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_starttime.title">
+			  <source>Start Time (hh:mm:ss)</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_starttime.description">
+			  <source>Starts video at this minute.</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_endtime.title">
+			  <source>End Time (hh:mm:ss)</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_endtime.description">
+			  <source>Starts video at this minute.</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_fullscreen.title">
+			  <source>Fullscreen</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_fullscreen.description">
+			  <source>Disables and enables fullscreen option.</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_mute.title">
+			  <source>Mute</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_mute.description">
+			  <source>Video starts playing with the sound turned off.</source>
 			</trans-unit>
 			<trans-unit id="tx_vimeovideo_loop.title">
 			  <source>Loop</source>
 			</trans-unit>
 			<trans-unit id="tx_vimeovideo_loop.description">
-			  <source>Loops video endlessly.</source>
+			  <source>Sets looping on and off.</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo.enable">
+			  <source>Enable</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo.disable">
+			  <source>Disable</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_covertitle.title">
+			  <source>Cover Title</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_covertitle.description">
+			  <source>Title shown over cover image.</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_covertext.title">
+			  <source>Cover Text</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_covertext.description">
+			  <source>Text shown over cover image under the title.</source>
+			</trans-unit>
+			<trans-unit id="tx_vimeovideo_cover.image">
+			  <source>Custom Cover</source>
 			</trans-unit>
 		</body>
 	</file>

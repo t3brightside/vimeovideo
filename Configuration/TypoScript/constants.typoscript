@@ -1,0 +1,22 @@
+# cat=vimeovideo/1; type=int+; label= Max width of the cover image in px
+vimeovideo.coverimagewidth = 1280
+# cat=vimeovideo/1; type=int+; label= Add class 'small' to the video container if outer container is narrower than this
+vimeovideo.breakpointSmall = 500
+# cat=vimeovideo/1; type=int+; label= Add class 'tiny' to the video container if outer container is narrower than this
+vimeovideo.breakpointTiny = 300
+# cat=vimeovideo/1; type=boolean[1]; label= Enable GDPR notification overlay after clicking 'play'
+vimeovideo.gdprnote = 1
+# cat=vimeovideo/1; type=string; label= Override GDPR notification text
+vimeovideo.gdprtextoverride =
+# cat=vimeovideo/vimeovideo; type=int+; label= Padding between images in % of outside container
+vimeovideo.colspacewidth = 1.5
+# cat=vimeovideo/1; type=string; label= Template root paths
+vimeovideo.templateRootPaths = EXT:vimeovideo/Resources/Private/Templates/
+# cat=vimeovideo/1; type=string; label= Template root paths
+vimeovideo.partialRootPaths = EXT:vimeovideo/Resources/Private/Partials/
+# cat=vimeovideo/1; type=string; label= CSS file path
+vimeovideo.cssFile = EXT:vimeovideo/Resources/Public/Css/vimeovideo.css
+# cat=vimeovideo/1; type=boolean[1]; label= CSS file priority, 0 means CSS is loaded in page footer
+vimeovideo.cssPriority = 1
+# cat=vimeovideo/1; type=sting; label= Force image file format (make sure it's enabled in [GFX][imagefile_ext])
+vimeovideo.forceImageFileFormat = 

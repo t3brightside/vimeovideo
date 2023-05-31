@@ -1,4 +1,8 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
+use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('vimeovideo', 'Configuration/TypoScript/', 'Vimeo Video');
+defined('TYPO3') || die('Access denied.');
+
+ExtensionManagementUtility::addStaticFile(
+    'vimeovideo', 'Configuration/TypoScript/', 'Vimeo Video'
+);

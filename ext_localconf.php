@@ -1,17 +1,26 @@
 <?php
-defined('TYPO3_MODE') || die ('Access denied.');
+use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Imaging\IconRegistry;
 
+defined('TYPO3') || die ('Access denied.');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:vimeovideo/Configuration/PageTS/setup.typoscript">');
+(function () {
+  $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
+  // Only include page.tsconfig if TYPO3 version is below 12 so that it is not imported twice.
+  if ($versionInformation->getMajorVersion() < 12) {
+      ExtensionManagementUtility::addPageTSConfig('
+          @import "EXT:vimeovideo/Configuration/page.tsconfig"
+      ');
+  }
 
-
-$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-$iconRegistry->registerIcon(
-  'vimeovideo_icon',
-  \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+  $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+  $iconRegistry->registerIcon(
+      'vimeovideo_icon',
+      \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
   ['source' => 'EXT:vimeovideo/Resources/Public/Icons/ext_icon_content.svg']
-);
+  );
 
-
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['vimeovideo_pi1'] =
-   \Brightside\Vimeovideo\Hooks\PageLayoutView\NewContentElementPreviewRenderer::class;
+  $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\Brightside\Vimeovideo\Evaluation\HoursMinutesSeconds::class] = '';
+})();

@@ -1,0 +1,74 @@
+<div class="vimeovideo {f:if(condition: data.tx_vimeovideo_colcount, then: 'item')}" style="{f:if(condition: data.tx_vimeovideo_colcount, then: 'width: {itemWidth}%')}">
+    <div class="videoWrapper v{data.uid} <f:if condition="{item.coverimages.0}">coverimaged autoplay{item.video.autoplay}</f:if>"
+         style="padding-bottom:<f:if condition="{item.settings.ratio} == 0">{ratioDefault}%</f:if><f:if condition="{item.settings.ratio} == 1">{ratio1}%</f:if>;
+    ">
+    <div class="vimeoPlayer" id="vimeoPlayer-<f:format.raw>{item.video.uid}</f:format.raw>"></div>
+    <button 
+        class="coverimage-click" 
+        aria-label="Play"
+        data-vm-id="player-<f:format.raw>{item.video.uid}</f:format.raw>" 
+        data-options='{
+        "playerId": "vimeoPlayer-<f:format.raw>{item.video.uid}</f:format.raw>", 
+        "videoId": "<f:format.raw>{item.video.contents}</f:format.raw>", 
+        {f:if(condition: item.settings.start, then: '&quot;startAt&quot;: &quot;{item.settings.start}&quot;,')}
+        {f:if(condition: item.settings.end, then: '&quot;pauseAt&quot;: &quot;{item.settings.end}&quot;,')}
+        {f:if(condition: item.settings.loop, then: '&quot;loop&quot;: true,')}
+        {f:if(condition: item.settings.mute, then: '&quot;muted&quot;: true,', else: '&quot;muted&quot;: false,')}
+        "responsive": true,
+        "keyboard": true,
+        "autoplay": true
+    }'>
+    </button>
+        <div
+            class="coverimage"
+            style="background:url(
+                <f:if condition="{item.coverimages.0}">
+                    <f:then>
+                        <f:uri.image
+                            src="{item.coverimages.0.uid}"
+                            treatIdAsReference="1"
+                            width="{coverImageWidth_x2}"
+                            cropVariant="{f:if(condition: item.settings.ratio, then: 'tv', else: 'widescreen')}"
+                            fileExtension="{settings.forceImageFileFormat}"
+                        />
+                    </f:then>
+                    <f:else>
+                        <f:uri.image src="{item.original.preview}" width="{coverImageWidth_x2}" fileExtension="{settings.forceImageFileFormat}" />
+                    </f:else>
+                </f:if>
+            ) center center no-repeat; background-size: cover;">
+            <f:if condition="{item.video.title} && !{data.tx_vimeovideo_titles} || {item.video.description} && {data.tx_vimeovideo_descriptions}">
+                <div class="covertext">
+                    <f:if condition="{item.video.title} && !{data.tx_vimeovideo_titles} "><h2>{item.video.title}</h2><br /></f:if>
+                    <f:if condition="{item.video.description} && {data.tx_vimeovideo_descriptions}"><p>{item.video.description}</p></f:if>
+                </div>
+            </f:if>
+            <f:render section="playbutton" />
+        </div>
+   </div>
+   <f:render section="GdprOverlay" arguments="{_all}" />
+</div>
+
+<f:section name="playbutton">
+    <svg class="playbutton" height="100%" version="1.1" viewBox="0 0 68 48" width="100%"><path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="rgba(0,0,0,0.75)"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+</f:section>
+
+<f:section name="GdprOverlay">
+    <div class="vimeovideo-gdpr-overlay " id="gdpr-vimeoPlayer-{item.video.uid}">
+        <div class="vimeovideo-gdpr-text">
+            <div class="vimeovideo-gdpr-note">
+                <f:if condition="{gdprtextoverride}">
+                    <f:then>
+                        {gdprtextoverride}
+                    </f:then>
+                    <f:else>
+                        <f:translate key="gdpr-text" extensionName="Vimeovideo" />
+                    </f:else>
+                </f:if>
+            </div>
+            <button id="vimeoGdprAgreeOnce" class="vimeovideo-gdpr-button"><f:translate key="gdpr-consent" extensionName="Vimeovideo" /></button>
+            <button id="vimeoGdprAgreeForSession" class="vimeovideo-gdpr-button"><f:translate key="gdpr-consentall" extensionName="Vimeovideo" /></button><br />
+        </div>
+        <button id="vimeoGdprCancel" class="vimeovideo-gdpr-cancel">×</button>
+    </div>
+</f:section>

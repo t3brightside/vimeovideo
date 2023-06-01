@@ -10,7 +10,7 @@
 				<source>Accept &amp; Play</source>
 			</trans-unit>
 			<trans-unit id="gdpr-consentall" xml:space="preserve">
-				<source>Accept for All Videos &amp; Play</source>
+				<source>Accept for all Vimeo videos &amp; play</source>
 			</trans-unit>
 			<trans-unit id="gdpr-cancel" xml:space="preserve">
 				<source>Cancel</source>

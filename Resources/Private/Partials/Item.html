@@ -1,6 +1,6 @@
 <div class="vimeovideo {f:if(condition: data.tx_vimeovideo_colcount, then: 'item')}" style="{f:if(condition: data.tx_vimeovideo_colcount, then: 'width: {itemWidth}%')}">    
     <div class="videoWrapper v{data.uid} <f:if condition="{item.coverimages.0}">coverimaged</f:if>"
-         style="padding-bottom:<f:if condition="{item.settings.ratio} == 0">{ratioDefault}%</f:if><f:if condition="{item.settings.ratio} == 'vertical'">{ratio1}%</f:if><f:if condition="{item.settings.ratio} == 'square'">{ratio2}%</f:if>">
+         style="padding-bottom:<f:if condition="{item.settings.ratio} == 0">{widescreen}%</f:if><f:if condition="{item.settings.ratio} == 'vertical'">{vertical}%</f:if><f:if condition="{item.settings.ratio} == 'square'">{square}%</f:if>">
         <div class="vimeoPlayer" id="vimeoPlayer-<f:format.raw>{item.video.uid}</f:format.raw>"></div>
         <button 
             class="coverimage-click" 

@@ -48,16 +48,16 @@ tt_content {
       hl.data = siteLanguage:iso-639-1
 
       # wide screen 16:9 value (math behind: 9 * 100 / 16 = 56.25)
-      ratioDefault = TEXT
-      ratioDefault.value = 56.25
+      widescreen = TEXT
+      widescreen.value = 56.25
 
       # portrait 9:16 value (math behind: 16 * 100 / 9 = 177.77)
-      ratio1 = TEXT
-      ratio1.value = 177.77
+      vertical = TEXT
+      vertical.value = 177.77
 
       # square 1:1 value (math behind: duh?)
-      ratio2 = TEXT
-      ratio2.value = 100
+      square = TEXT
+      square.value = 100
 
       coverimagewidth = TEXT
       coverimagewidth.value = {$vimeovideo.coverimagewidth}

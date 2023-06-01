@@ -7,6 +7,7 @@ CREATE TABLE tt_content (
 	tx_vimeovideo_colcount int(1) DEFAULT '0' NOT NULL,
 	tx_vimeovideo_titles int(1) DEFAULT '0' NOT NULL,
 	tx_vimeovideo_descriptions int(1) DEFAULT '0' NOT NULL,
+	tx_vimeovideo_url varchar(255),
 );
 
 CREATE TABLE sys_file_reference (

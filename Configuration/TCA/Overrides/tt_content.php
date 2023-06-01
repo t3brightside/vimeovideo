@@ -100,6 +100,18 @@ $tempColumns = array(
             ],
 		]
 	],
+	'tx_vimeovideo_url'  => [
+		'exclude' => 0,
+		'label' => 'Vimeo URL (from earlier version)',
+		'description' => 'Not for editing and not shown in web page. Use "Video" section above',
+		'config' => [
+            'readOnly' => true,
+			'type' => 'input',
+			'size' => '50',
+			'eval' => 'required',
+			'requiredCond' => '!field',
+        ],
+    ],
 );
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
@@ -135,7 +147,7 @@ if ($extensionConfiguration['vimeovideoEnablePagination']) {
     );
 }
 
-$GLOBALS['TCA']['tt_content']['palettes']['vimeovideoMain']['showitem'] = 'tx_vimeovideo_assets';
+$GLOBALS['TCA']['tt_content']['palettes']['vimeovideoMain']['showitem'] = 'tx_vimeovideo_assets,--linebreak--,tx_vimeovideo_url';
 $GLOBALS['TCA']['tt_content']['palettes']['vimeovideoLayout']['showitem'] = '
     tx_vimeovideo_colcount,
     tx_vimeovideo_titles,

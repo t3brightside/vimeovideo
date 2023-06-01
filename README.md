@@ -4,7 +4,7 @@
 [![Brightside](https://img.shields.io/badge/by-t3brightside.com-orange.svg?style=flat)](https://t3brightside.com)
 
 
-**TYPO3 CMS extension for Vimeo video content with custom cover images, gallery layout and backend previews.**
+**TYPO3 CMS extension for Vimeo video content with custom cover images, gallery layout, and backend previews.**
 
 **[Demo](https://microtemplate.t3brightside.com)**
 

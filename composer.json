@@ -1,22 +1,21 @@
 {
   "name": "t3brightside/vimeovideo",
-  "description": "TYPO3 CMS extension for easy to use Vimeo video content elements.",
+  "description": "TYPO3 CMS extension for Vimeo videos with custom cover images, gallery layout, pagination, GDPR options, and backend previews.",
   "type": "typo3-cms-extension",
-  "version": "0.8.0",
-  "keywords": ["TYPO3", "Vimeo", "video", "responsive"],
+  "keywords": ["TYPO3", "Vimeo", "video", "responsive", "GDPR"],
   "homepage": "https://github.com/t3brightside/vimeovideo/",
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Tanel Põld",
       "role": "Developer",
-      "email": "info@t3brightside.com",
       "homepage": "https://t3brightside.com"
     }
   ],
   "require": {
       "typo3/cms-core": "^11.5 || ^12.4",
-      "typo3/cms-fluid-styled-content": "*"
+      "typo3/cms-fluid-styled-content": "^11.5 || ^12.4",
+	    "t3brightside/embedassets": "^1.2"
   },
   "autoload": {
     "psr-4": {

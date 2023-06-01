@@ -1,48 +1,40 @@
-2014-08-30  Tanel Põld  <tanel@brightside.ee>
-
-	* 0.1.0
-		– Initial release
-
-2014-09-02
-	* 0.1.1
-		– added Resources/Public/JavaScript/jquery.fitVids.js
-
-2014-09-02
-	* 0.2.0
-		– fitV5ids.js removed completely as it was not working with all modern browsers. Pure CSS solution is used. Changes in setup.txt and Index.html template.
-2015-05-15
-	* 0.3.0
-		– TYPO3 7.2 compatibility
-		– HTTPS set as default in embed video template
-2015-05-21
-	* 0.3.1
-		– Sys categories and gridelements compatibility.
-2015-05-28
-	* 0.3.2
-		– Improved Vimeo links parsing
-2015-05-28
-	* 0.3.3
-		– A test bug fixed
-2015-05-28
-	* 0.3.4
-		– HTML Template bug fix correcting aspect ratio array names
-2015-11-19
-	* 0.4.0
-		– Backend preview for videos
-		– TYPO3 7.6 LTS compatible
-		– Moved under "Typical Page Content" in New content element wizard
-2017-04-11
-	* 0.5.0
-		– Dropping support for TYPO3 7.6 LTS
-		– TYPO3 8.7 LTS compatible
-2019-01-15
-	* 0.6.0
-		– Dropping support for TYPO3 8.5 LTS
-		– TYPO3 9.5 LTS compatible
-2020-05-19
-	* 0.7.0
-		– TYPO3 10.4 LTS compatible
-2021-04-05
-	* 0.8.0
-		– TYPO3 11 compatible
-		– Change language xml to xlf
+* 0.1.0
+	– Initial release
+* 0.1.1
+	– added Resources/Public/JavaScript/jquery.fitVids.js
+* 0.2.0
+	– fitV5ids.js removed completely as it was not working with all modern browsers. Pure CSS solution is used. Changes in setup.txt and Index.html template.
+* 0.3.0
+	– TYPO3 7.2 compatibility
+	– HTTPS set as default in embed video template
+* 0.3.1
+	– Sys categories and gridelements compatibility.
+* 0.3.2
+	– Improved Vimeo links parsing
+* 0.3.3
+	– A test bug fixed
+* 0.3.4
+	– HTML Template bug fix correcting aspect ratio array names
+* 0.4.0
+	– Backend preview for videos
+	– TYPO3 7.6 LTS compatible
+	– Moved under "Typical Page Content" in New content element wizard
+* 0.5.0
+	– Dropping support for TYPO3 7.6 LTS
+	– TYPO3 8.7 LTS compatible
+* 0.6.0
+	– Dropping support for TYPO3 8.5 LTS
+	– TYPO3 9.5 LTS compatible
+* 0.7.0
+	– TYPO3 10.4 LTS compatible
+* 0.8.0
+	– TYPO3 11 compatible
+	– Change language xml to xlf
+* 1.0.0
+	- [!!BREAKING!!] Not compatible with older versions, manual update of content elements needed
+	- [FEATURE] Keep old video link field read only, for easier manual upgrades (will be removed in version 1.1)
+	- [FEATURE] GDPR friendly out of the box
+	- [FEATURE] Cropratios landscape, vertical, square
+	- [FEATURE] Start and end time
+	- [FEATURE] Custom cover images, titles, and descriptions
+	- [FEATURE] Gallery with column and pagination settings

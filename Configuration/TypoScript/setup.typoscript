@@ -51,9 +51,13 @@ tt_content {
       ratioDefault = TEXT
       ratioDefault.value = 56.25
 
-      # old screens 4:3 value (math behind: 3 * 100 / 4 = 75)
+      # portrait 9:16 value (math behind: 16 * 100 / 9 = 177.77)
       ratio1 = TEXT
-      ratio1.value = 75
+      ratio1.value = 177.77
+
+      # square 1:1 value (math behind: duh?)
+      ratio2 = TEXT
+      ratio2.value = 100
 
       coverimagewidth = TEXT
       coverimagewidth.value = {$vimeovideo.coverimagewidth}

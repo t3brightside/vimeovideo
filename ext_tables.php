@@ -2,6 +2,7 @@
 defined('TYPO3') || die('Access denied.');
 
 
-$GLOBALS['TBE_STYLES']['skins']['vimeovideo']['stylesheetDirectories'] = array(
-    'visual' => 'EXT:vimeovideo/Resources/Public/Css/',
-);
+(function () {
+    $GLOBALS['TBE_STYLES']['skins']['vimeovideo']['stylesheetDirectories'][] =
+        'EXT:vimeovideo/Resources/Public/Css/Backend/';
+})();

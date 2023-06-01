@@ -68,12 +68,6 @@ class VimeovideoPreviewRenderer extends StandardContentPreviewRenderer
                 if ($video->getProperty('tx_vimeovideo_loop')){
                     $content .= '<li>' . $this->linkEditContent('Loop: on', $row) . '</li>';
                 }
-                if (!$video->getProperty('tx_vimeovideo_fullscreen')){
-                    $content .= '<li>' . $this->linkEditContent('Fullscreen: off', $row) . '</li>';
-                }
-                if (!$video->getProperty('tx_vimeovideo_rel')){
-                    $content .= '<li>' . $this->linkEditContent('Related: off', $row) . '</li>';
-                }
                 if ($video->getProperty('tx_vimeovideo_starttime')){
                     $content .= '<li>' . $this->linkEditContent('Start: ' . $video->getProperty('tx_vimeovideo_starttime') , $row) . '</li>';
                 }

@@ -207,12 +207,12 @@
 }
 
 .vimeovideo:hover .playbutton .ytp-large-play-button-bg {
-    fill: #19b7ea;
+    fill: #00adefff;
     transition: all .3s;
 }
 
 /* if .vimeovideo width is under set px, breakpoint is set */
-.vimeovideogallery>.item, .vimeovideogallery>.space {
+.vimeovideogallery .item, .vimeovideogallery .space {
     float: left;
 }
 

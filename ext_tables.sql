@@ -12,7 +12,7 @@ CREATE TABLE tt_content (
 CREATE TABLE sys_file_reference (
 	tx_vimeovideo_starttime varchar(10),
 	tx_vimeovideo_endtime varchar(10),
-	tx_vimeovideo_ratio tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	tx_vimeovideo_ratio varchar(10),
 	tx_vimeovideo_loop tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	tx_vimeovideo_mute tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	tx_vimeovideo_coverimage int(1) DEFAULT '0' NOT NULL,

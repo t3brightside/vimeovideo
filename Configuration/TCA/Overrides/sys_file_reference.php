@@ -33,7 +33,8 @@ $vimeoVideoColumns = array(
             'renderType' => 'selectSingle',
             'items' => [
                 ['Widescreen (16:9)', 0],
-                ['Standard (4:3)', 1],
+                ['Vertical (9:16)', 'vertical'],
+                ['Square (1:1)', 'square'],
             ],
             'size'     => 1,
             'maxitems' => 1,
@@ -100,13 +101,23 @@ $vimeoVideoColumns = array(
                       ],
                     ],
                   ],
-                  'tv' => [
-                    'title' => 'Standard (4:3)',
-                    'selectedRatio' => '4:3',
+                  'vertical' => [
+                    'title' => 'Vertical (9:16)',
+                    'selectedRatio' => '9:16',
                     'allowedAspectRatios' => [
-                      '4:3' => [
-                        'title' => 'TV',
-                        'value' => 4 / 3,
+                      '9:16' => [
+                        'title' => 'Vertical',
+                        'value' => 9 / 16,
+                      ],
+                    ],
+                  ],
+                  'square' => [
+                    'title' => 'Square (1:1)',
+                    'selectedRatio' => '1:1',
+                    'allowedAspectRatios' => [
+                      '1:1' => [
+                        'title' => 'Square',
+                        'value' => 1 / 1,
                       ],
                     ],
                   ],

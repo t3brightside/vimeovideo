@@ -67,9 +67,7 @@ class VimeovideoFilesProcessor extends FilesProcessor
                 'mute' => $video->getProperty('tx_vimeovideo_mute'),
                 'start' => $start,
                 'end' => $end,
-                'fullscreen' => $video->getProperty('tx_vimeovideo_fullscreen'),
                 'ratio' => $video->getProperty('tx_vimeovideo_ratio'),
-                'rel' => $video->getProperty('tx_vimeovideo_rel'),
             );
 
             // Get custom cover image

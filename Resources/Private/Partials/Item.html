@@ -1,24 +1,23 @@
-<div class="vimeovideo {f:if(condition: data.tx_vimeovideo_colcount, then: 'item')}" style="{f:if(condition: data.tx_vimeovideo_colcount, then: 'width: {itemWidth}%')}">
-    <div class="videoWrapper v{data.uid} <f:if condition="{item.coverimages.0}">coverimaged autoplay{item.video.autoplay}</f:if>"
-         style="padding-bottom:<f:if condition="{item.settings.ratio} == 0">{ratioDefault}%</f:if><f:if condition="{item.settings.ratio} == 1">{ratio1}%</f:if>;
-    ">
-    <div class="vimeoPlayer" id="vimeoPlayer-<f:format.raw>{item.video.uid}</f:format.raw>"></div>
-    <button 
-        class="coverimage-click" 
-        aria-label="Play"
-        data-vm-id="player-<f:format.raw>{item.video.uid}</f:format.raw>" 
-        data-options='{
-        "playerId": "vimeoPlayer-<f:format.raw>{item.video.uid}</f:format.raw>", 
-        "videoId": "<f:format.raw>{item.video.contents}</f:format.raw>", 
-        {f:if(condition: item.settings.start, then: '&quot;startAt&quot;: &quot;{item.settings.start}&quot;,')}
-        {f:if(condition: item.settings.end, then: '&quot;pauseAt&quot;: &quot;{item.settings.end}&quot;,')}
-        {f:if(condition: item.settings.loop, then: '&quot;loop&quot;: true,')}
-        {f:if(condition: item.settings.mute, then: '&quot;muted&quot;: true,', else: '&quot;muted&quot;: false,')}
-        "responsive": true,
-        "keyboard": true,
-        "autoplay": true
-    }'>
-    </button>
+<div class="vimeovideo {f:if(condition: data.tx_vimeovideo_colcount, then: 'item')}" style="{f:if(condition: data.tx_vimeovideo_colcount, then: 'width: {itemWidth}%')}">    
+    <div class="videoWrapper v{data.uid} <f:if condition="{item.coverimages.0}">coverimaged</f:if>"
+         style="padding-bottom:<f:if condition="{item.settings.ratio} == 0">{ratioDefault}%</f:if><f:if condition="{item.settings.ratio} == 'vertical'">{ratio1}%</f:if><f:if condition="{item.settings.ratio} == 'square'">{ratio2}%</f:if>">
+        <div class="vimeoPlayer" id="vimeoPlayer-<f:format.raw>{item.video.uid}</f:format.raw>"></div>
+        <button 
+            class="coverimage-click" 
+            aria-label="Play"
+            data-vm-id="player-<f:format.raw>{item.video.uid}</f:format.raw>" 
+            data-options='{
+            "playerId": "vimeoPlayer-<f:format.raw>{item.video.uid}</f:format.raw>", 
+            "videoId": "<f:format.raw>{item.video.contents}</f:format.raw>", 
+            {f:if(condition: item.settings.start, then: '&quot;startAt&quot;: &quot;{item.settings.start}&quot;,')}
+            {f:if(condition: item.settings.end, then: '&quot;pauseAt&quot;: &quot;{item.settings.end}&quot;,')}
+            {f:if(condition: item.settings.loop, then: '&quot;loop&quot;: true,')}
+            {f:if(condition: item.settings.mute, then: '&quot;muted&quot;: true,', else: '&quot;muted&quot;: false,')}
+            "responsive": true,
+            "keyboard": true,
+            "autoplay": true
+        }'>
+        </button>
         <div
             class="coverimage"
             style="background:url(
@@ -28,7 +27,7 @@
                             src="{item.coverimages.0.uid}"
                             treatIdAsReference="1"
                             width="{coverImageWidth_x2}"
-                            cropVariant="{f:if(condition: item.settings.ratio, then: 'tv', else: 'widescreen')}"
+                            cropVariant="{f:if(condition: item.settings.ratio, then: '{item.settings.ratio}', else: 'widescreen')}"
                             fileExtension="{settings.forceImageFileFormat}"
                         />
                     </f:then>

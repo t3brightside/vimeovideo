@@ -10,7 +10,7 @@
 				<target>Accept &amp; Play</target>
 			</trans-unit>
 			<trans-unit id="gdpr-consentall">
-				<target>Accept for All Videos &amp; Play</target>
+				<target>Accept for All Vimeo &amp; Play</target>
 			</trans-unit>
 			<trans-unit id="gdpr-cancel">
 				<target>Cancel</target>

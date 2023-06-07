@@ -38,8 +38,9 @@ function createPlayer(vimeoInfo, element) {
   }
 
   element.classList.add('play');
-  player.setCurrentTime(vimeoInfo.startAt);
-
+  if (vimeoInfo.startAt) {
+    player.setCurrentTime(vimeoInfo.startAt);
+  }
   element.addEventListener('click', function() {
     if (isPaused) {
       player.setCurrentTime(vimeoInfo.pauseAt);

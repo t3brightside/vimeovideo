@@ -38,3 +38,6 @@
 	- [FEATURE] Start and end time
 	- [FEATURE] Custom cover images, titles, and descriptions
 	- [FEATURE] Gallery with column and pagination settings
+* 1.1.0
+	- [FEATURE] Add link to Vimeo privacy terms
+	- [TASK] Add dependency on paginatedprocessors

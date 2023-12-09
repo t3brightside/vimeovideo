@@ -8,6 +8,8 @@ vimeovideo.breakpointTiny = 300
 vimeovideo.gdprnote = 1
 # cat=vimeovideo/1; type=string; label= Override GDPR notification text
 vimeovideo.gdprtextoverride =
+# cat=vimeovideo/1; type=string; label= Link to Vimeo privacy terms
+vimeovideo.privacytermslink = https://vimeo.com/privacy
 # cat=vimeovideo/vimeovideo; type=int+; label= Padding between images in % of outside container
 vimeovideo.colspacewidth = 1.5
 # cat=vimeovideo/1; type=string; label= Template root paths

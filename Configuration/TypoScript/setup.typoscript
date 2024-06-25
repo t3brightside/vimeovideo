@@ -51,6 +51,10 @@ tt_content {
       widescreen = TEXT
       widescreen.value = 56.25
 
+      # anamorphic screen
+      anamorphic = TEXT
+      anamorphic.value = 41.84
+
       # portrait 9:16 value (math behind: 16 * 100 / 9 = 177.77)
       vertical = TEXT
       vertical.value = 177.77
@@ -82,3 +86,8 @@ tt_content {
     }
   }
 }
+
+
+[typo3.branch == "12.4"]
+   tt_content.vimeovideo.settings.versionTwelve = 1
+[END]

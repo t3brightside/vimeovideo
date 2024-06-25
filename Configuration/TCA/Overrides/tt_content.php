@@ -1,48 +1,50 @@
 <?php
 use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
+use \TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use \Brightside\Vimeovideo\Preview\VimeovideoPreviewRenderer;
 
 defined('TYPO3') || die('Access denied.');
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['vimeovideo_pi1'] =  'vimeovideo_icon';
 
-ExtensionManagementUtility::addLLrefForTCAdescr(
-	'tt_content', 'EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf'
-);
-
 // Get extension configuration
 $extensionConfiguration = GeneralUtility::makeInstance(
-    \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+    ExtensionConfiguration::class
 );
 $extensionConfiguration = $extensionConfiguration->get('vimeovideo');
 
 // Add to content type dropdown
 ExtensionManagementUtility::addTcaSelectItem(
-    "tt_content",
-    "CType",
+    'tt_content',
+    'CType',
     [
-        'Vimeo Video',
-        'vimeovideo_pi1',
-        'vimeovideo_icon'
+        'label' => 'Vimeo Video',
+        'description' => 'Vimeo video content element.',
+        'value' => 'vimeovideo_pi1',
+        'icon' => 'vimeovideo_icon',
+        'group' => 'default',
     ],
     'textmedia',
     'after'
 );
 
+
 $tempColumns = array(
 	'tx_vimeovideo_assets' => [
 		'exclude' => 1,
 		'label' => 'Video',
-		'config' => ExtensionManagementUtility::getFileFieldTCAConfig('tx_vimeovideo_assets', [
-			'behaviour' => [
+        'config' => [
+            'type' => 'file',
+            'allowed' => 'vimeo',
+            'behaviour' => [
                 'allowLanguageSynchronization' => true,
             ],
 			'appearance' => [
 				'createNewRelationLinkTitle' => 'Video',
 				'showPossibleLocalizationRecords' => true,
 			],
-			'overrideChildTca' => [
+            'overrideChildTca' => [
 				'types' => [
 					\TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
 						'showitem' => '
@@ -51,7 +53,7 @@ $tempColumns = array(
 					],
 				],
 			],
-		], 'vimeo'),
+        ],
 	],
 	'tx_vimeovideo_colcount' => [
 		'exclude' => 1,
@@ -100,18 +102,6 @@ $tempColumns = array(
             ],
 		]
 	],
-	'tx_vimeovideo_url'  => [
-		'exclude' => 0,
-		'label' => 'Vimeo URL (from earlier version)',
-		'description' => 'Not for editing and not shown in web page. Use "Video" section above',
-		'config' => [
-            'readOnly' => true,
-			'type' => 'input',
-			'size' => '50',
-			'eval' => 'required',
-			'requiredCond' => '!field',
-        ],
-    ],
 );
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
@@ -147,7 +137,7 @@ if ($extensionConfiguration['vimeovideoEnablePagination']) {
     );
 }
 
-$GLOBALS['TCA']['tt_content']['palettes']['vimeovideoMain']['showitem'] = 'tx_vimeovideo_assets,--linebreak--,tx_vimeovideo_url';
+$GLOBALS['TCA']['tt_content']['palettes']['vimeovideoMain']['showitem'] = 'tx_vimeovideo_assets';
 $GLOBALS['TCA']['tt_content']['palettes']['vimeovideoLayout']['showitem'] = '
     tx_vimeovideo_colcount,
     tx_vimeovideo_titles,

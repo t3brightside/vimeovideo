@@ -18,7 +18,7 @@ $vimeoVideoColumns = array(
     'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_endtime.title',
     'config' => array(
       'type' => 'input',
-      'size' => '1',
+      'size' => '8',
       'eval' => 'trim,nospace,Brightside\Vimeovideo\Evaluation\HoursMinutesSeconds',
       'behaviour' => [
         'allowLanguageSynchronization' => true,
@@ -33,6 +33,7 @@ $vimeoVideoColumns = array(
             'renderType' => 'selectSingle',
             'items' => [
                 ['Widescreen (16:9)', 0],
+                ['Anamorphic (2.39:1)', 'anamorphic'],
                 ['Vertical (9:16)', 'vertical'],
                 ['Square (1:1)', 'square'],
             ],
@@ -80,17 +81,30 @@ $vimeoVideoColumns = array(
   'tx_vimeovideo_coverimage' => [
     'exclude' => 1,
     'label' => 'LLL:EXT:vimeovideo/Resources/Private/Language/locallang_db.xlf:tx_vimeovideo_cover.image',
-    'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-      'tx_vimeovideo_coverimage',
-      [
-        'behaviour' => [
+    'config' => [
+      'type' => 'file',
+      'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+      'behaviour' => [
           'allowLanguageSynchronization' => true,
-        ],
+      ],
+      'appearance' => [
+          'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+      ],
         'overrideChildTca' => [
           'columns' => [
             'crop' => [
               'config' => [
                 'cropVariants' => [
+                  'anamorphic' => [
+                    'title' => 'Anamorphic (2.39:1)',
+                    'selectedRatio' => '2.39:1',
+                    'allowedAspectRatios' => [
+                        '2.39:1' => [
+                            'title' => 'Anamorphic',
+                            'value' => 2.39 / 1,
+                        ],
+                    ],
+                  ],
                   'widescreen' => [
                     'title' => 'Widescreen (16:9)',
                     'selectedRatio' => '16:9',
@@ -139,8 +153,6 @@ $vimeoVideoColumns = array(
         ],
       ],
     ],
-    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-  ),
   ],
 );
 

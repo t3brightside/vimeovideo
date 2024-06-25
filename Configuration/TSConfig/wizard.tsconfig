@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.common {
+   elements {
+      vimeovideo_pi1 {
+         iconIdentifier = vimeovideo_icon
+         title = Vimeo Video
+         description = Vimeo video content element
+         tt_content_defValues {
+            CType = vimeovideo_pi1
+         }
+      }
+   }
+   show := addToList(vimeovideo_pi1)
+}

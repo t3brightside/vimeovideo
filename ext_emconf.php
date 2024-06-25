@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
   'title' => 'Vimeo Video',
-	'description' => 'Vimeo videos with custom cover images, gallery layout, pagination, GDPR options, and backend previews.',
+	'description' => 'Vimeo with custom cover images, gallery, pagination, GDPR, and backend previews. Demo: https://microtemplate.t3brightside.com',
   'category' => 'fe',
 	'version' => '2.0.0',
 	'state' => 'stable',

@@ -41,3 +41,5 @@
 * 1.1.0
 	- [FEATURE] Add link to Vimeo privacy terms
 	- [TASK] Add dependency on paginatedprocessors
+* 2.0.0
+	- [TASK] Add v13 compatibility and drop v11 support

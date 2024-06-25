@@ -3,7 +3,7 @@
 }
 
 .vimeovideo>.videoWrapper {
-    overflow: hidden;
+/*    overflow: hidden; */
     position: relative;
     height: 0;
 }
@@ -217,7 +217,6 @@
 }
 
 /* column layouts */
-.vimeovideogallery.colcount-0 .space,
 .vimeovideogallery.colcount-3 .space:nth-child(3n),
 .vimeovideogallery.colcount-2 .space:nth-child(4n),
 .vimeovideogallery.colcount-4 .space:nth-child(8n),

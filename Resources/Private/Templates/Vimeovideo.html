@@ -27,7 +27,14 @@
 		</f:if>
             <f:for each="{vimeovideos}" as="item" iteration="iterator">
                 <f:render partial="Item" arguments="{_all}" />
-                <f:if condition="{iterator.isLast} != 1"><div class="space" style="width: {settings.colspacewidth}%; padding-bottom: {settings.colspacewidth}%;"></div></f:if>
+                <f:if condition="{iterator.isLast} != 1 && {colCount}">
+                    <f:then>
+                        <div class="space" style="width: {settings.colspacewidth}%; padding-bottom: {settings.colspacewidth}%;"></div>
+                    </f:then>
+                    <f:else>
+                        <div class="space" style="width: 100%; float: none; padding-bottom: {settings.colspacewidth}%;"></div>
+                    </f:else>
+                </f:if>
             </f:for>
 		<f:if condition="{vimeovideos -> f:count()} > 1">
 			</div>
